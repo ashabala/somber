@@ -58,13 +58,13 @@ class BaseSom(Base):
         # Initialize the distance grid: only needs to be done once.
         self.distance_grid = self._initialize_distance_grid()
 
-        super().__init__(self.num_neurons,
-                         data_dimensionality,
-                         params,
-                         'argmin',
-                         'min',
-                         initializer,
-                         scaler)
+        super(BaseSom, self).__init__(self.num_neurons,
+                         	      data_dimensionality,
+	                              params,
+             		             'argmin',
+                         	     'min',
+	                             initializer,
+            	    	             scaler)
 
     def _init_prev(self, x):
         """Initialize recurrent SOMs."""
@@ -435,13 +435,13 @@ class Som(BaseSom):
                          'factor': lr_lambda,
                          'orig': learning_rate}}
 
-        super().__init__(map_dimensions,
-                         data_dimensionality,
-                         params,
-                         'argmin',
-                         'min',
-                         initializer,
-                         scaler)
+        super(Som, self).__init__(map_dimensions,
+                         	  data_dimensionality,
+	                          params,
+         	                 'argmin',
+                 	         'min',
+                         	 initializer,
+	                         scaler)
 
     @classmethod
     def load(cls, path):

@@ -268,14 +268,14 @@ class RecursiveSom(RecursiveMixin, Som):
                  lr_lambda=2.5,
                  infl_lambda=2.5):
         """Organize your maps recursively."""
-        super().__init__(map_dimensions,
-                         learning_rate,
-                         data_dimensionality,
-                         influence,
-                         initializer,
-                         scaler,
-                         lr_lambda,
-                         infl_lambda)
+        super(RecursiveSom, self).__init__(map_dimensions,
+        		                   learning_rate,
+		                           data_dimensionality,
+		                           influence,
+		                           initializer,
+		                           scaler,
+		                           lr_lambda,
+		                           infl_lambda)
 
         self.alpha = alpha
         self.beta = beta
@@ -334,14 +334,14 @@ class RecursiveNg(RecursiveMixin, Ng):
                  lr_lambda=2.5,
                  infl_lambda=2.5):
         """Organize your gas recursively."""
-        super().__init__(num_neurons,
-                         data_dimensionality,
-                         learning_rate,
-                         influence,
-                         initializer,
-                         scaler,
-                         lr_lambda,
-                         infl_lambda)
+        super(RecursiveNg, self).__init__(num_neurons,
+		                          data_dimensionality,
+		                          learning_rate,
+		                          influence,
+		                          initializer,
+		                          scaler,
+		                          lr_lambda,
+		                          infl_lambda)
 
         self.alpha = alpha
         self.beta = beta

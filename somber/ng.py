@@ -53,13 +53,13 @@ class Ng(Base):
                          'factor': lr_lambda,
                          'orig': learning_rate}}
 
-        super().__init__(num_neurons,
-                         data_dimensionality,
-                         params,
-                         'argmin',
-                         'min',
-                         initializer,
-                         scaler)
+        super(Ng, self).__init__(num_neurons,
+	                         data_dimensionality,
+	                         params,
+	                         'argmin',
+	                         'min',
+	                         initializer,
+	                         scaler)
 
     def _get_bmu(self, activations):
         """Get indices of bmus, sorted by their distance from input."""

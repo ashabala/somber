@@ -67,15 +67,15 @@ class PLSom(BaseSom):
                  initializer=range_initialization,
                  scaler=None):
         """Organize your maps parameterlessly."""
-        super().__init__(map_dimensions,
-                         data_dimensionality=data_dimensionality,
-                         argfunc='argmin',
-                         valfunc='min',
-                         params={'r': {'value': 0,
-                                       'factor': 1,
-                                       'orig': 0}},
-                         initializer=initializer,
-                         scaler=scaler)
+        super(PLSom, self).__init__(map_dimensions,
+	                            data_dimensionality=data_dimensionality,
+	                            argfunc='argmin',
+	                            valfunc='min',
+	                            params={'r': {'value': 0,
+	                                          'factor': 1,
+	                                          'orig': 0}},
+	                            initializer=initializer,
+	                            scaler=scaler)
         self.beta = beta if beta else 2
 
     def _epoch(self,
